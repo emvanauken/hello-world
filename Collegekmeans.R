@@ -1,11 +1,3 @@
-#####################################
-#  unsuper_acc.R                    #
-# In-class demo of Clustering       #
-#  using Utilities data             #
-#  hierarchical and kmeans          #
-#####################################
-
-## Read and examine data
 mydata <- read.csv("NEAcad.csv")
 
 str(mydata)
@@ -54,5 +46,7 @@ mydatak <-cbind(mydatak, kc$cluster) # bind the column of names
 plot(COSTT4_A ~ ADM_RATE, data = mydata, col=kc$cluster)
 # now label points 
 with(mydata,text(COSTT4_A ~ ADM_RATE, labels=INSTNM,pos=4))
+
+write.csv(mydatak,"KMCluster.csv")
 
 
